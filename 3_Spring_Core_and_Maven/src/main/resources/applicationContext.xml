@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--Ex 1-->
+
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="-->
+<!--        http://www.springframework.org/schema/beans-->
+<!--        https://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+<!--    <bean id="bookRepository" class="com.library.com.library.Ex2.repository.BookRepository"/>-->
+
+<!--    <bean id="bookService" class="com.library.com.library.Ex2.service.BookService" />-->
+<!--</beans>-->
+
+<!--Ex 2-->
+
+<!--<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xsi:schemaLocation="-->
+<!--        http://www.springframework.org/schema/beans-->
+<!--        https://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+<!--    <bean id="bookRepository" class="com.library.Ex2.repository.BookRepository"/>-->
+
+<!--    <bean id="bookService" class="com.library.Ex2.service.BookService">-->
+<!--        <property name="bookRepository" ref="bookRepository"/>-->
+<!--    </bean>-->
+<!--</beans>-->
+
+<!--Ex 3-->
+
+<!--<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:aop="http://www.springframework.org/schema/aop"-->
+<!--       xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xsi:schemaLocation="-->
+<!--            http://www.springframework.org/schema/beans-->
+<!--            https://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--            http://www.springframework.org/schema/aop-->
+<!--            https://www.springframework.org/schema/aop/spring-aop.xsd">-->
+
+<!--    <aop:aspectj-autoproxy/>-->
+
+<!--    <bean id="bookRepository" class="com.library.Ex3.repository.BookRepository"/>-->
+
+<!--    <bean id="bookService" class="com.library.Ex3.service.BookService">-->
+<!--        <property name="bookRepository" ref="bookRepository"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="loggingAspect" class="com.library.Ex3.aspect.LoggingAspect"/>-->
+<!--</beans>-->
+
+<!--Ex 4-->
+<!--<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xsi:schemaLocation="-->
+<!--        http://www.springframework.org/schema/beans-->
+<!--        https://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+<!--    <bean id="someClass" class="com.library.Ex4.SomeClass"/>-->
+<!--</beans>-->
+
+<!--Ex 6-->
+<!--<beans xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xsi:schemaLocation="-->
+<!--           http://www.springframework.org/schema/beans-->
+<!--           http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--           http://www.springframework.org/schema/context-->
+<!--           http://www.springframework.org/schema/context/spring-context.xsd">-->
+
+<!--    <context:component-scan base-package="com.library"/>-->
+<!--</beans>-->
+
+<!--Ex 7-->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookRepository" class="com.library.Ex7.repository.BookRepository"/>
+
+    <bean id="bookService" class="com.library.Ex7.service.BookService">
+        <constructor-arg ref="bookRepository"/>
+        <property name="bookRepository" ref="bookRepository"/>
+    </bean>
+
+</beans>
